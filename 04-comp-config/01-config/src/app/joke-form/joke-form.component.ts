@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
 import { Joke } from '../joke';
 
 @Component({
   selector: 'joke-form',
   templateUrl: './joke-form.component.html',
-  styleUrls: ['./joke-form.component.css']
+  styleUrls: ['./joke-form.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class JokeFormComponent implements OnInit {
   @Output() jokeCreated = new EventEmitter<Joke>();
