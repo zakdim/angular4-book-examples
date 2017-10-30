@@ -1,12 +1,10 @@
 <div class="card mt-2 mb-2" style="width: 30rem;">
   <div class="card-body">
     <h4 class="card-title">
-    	<ng-content select=".setup"></ng-content>
+    	{{data.setup}}
     </h4>
     <p class="card-text"
-       [hidden]="data.hide">
-       <ng-content select=".punchline"></ng-content>
-     </p>
+       [hidden]="data.hide">{{data.punchline}}</p>
     <a (click)="data.toggle()"
        class="btn btn-warning">Tell Me
     </a>

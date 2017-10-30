@@ -1,6 +1,9 @@
 <div class="container">
   <div class="card-deck">
     <joke-form (jokeCreated)="addJoke($event)"></joke-form>
-    <joke *ngFor="let j of jokes" [joke]="j" (jokeDeleted)="deleteJoke($event)"></joke>
+    <joke *ngFor="let j of jokes" [joke]="j" (jokeDeleted)="deleteJoke($event)">
+      <span class="setup">{{ j.setup }}?</span>
+      <span class="punchline">{{ j.punchline }}?</span>
+    </joke>
   </div>
 </div>
