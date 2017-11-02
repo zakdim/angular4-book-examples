@@ -26,15 +26,15 @@ export class JokeComponent implements OnChanges,
     AfterViewChecked,
     OnDestroy {
   @Input('joke') data: Joke;
-  @Output() jokeDeleted = new EventEmitter<Joke>();
+  // @Output() jokeDeleted = new EventEmitter<Joke>();
 
   constructor() {
     // console.log(`new - data is ${this.data}`);
   }
 
-  deleteItem() {
-    this.jokeDeleted.emit(this.data);
-  }
+  // deleteItem() {
+  //   this.jokeDeleted.emit(this.data);
+  // }
 
   ngOnChanges(changes: SimpleChanges) {
 //     console.log(`ngOnChanges - data is ${this.data}`);
