@@ -1,5 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component, Input, Output, EventEmitter,
+  SimpleChanges,
+  OnChanges,
+  OnInit,
+  DoCheck,
+  AfterContentInit,
+  AfterContentChecked,
+  AfterViewInit,
+  AfterViewChecked,
+  OnDestroy
+ } from '@angular/core';
 import { Joke } from '../joke';
 
 @Component({
@@ -7,8 +17,14 @@ import { Joke } from '../joke';
   templateUrl: './joke.component.html',
   styleUrls: ['./joke.component.css']
 })
-// export class JokeComponent implements OnInit {
-export class JokeComponent {
+export class JokeComponent implements OnChanges,
+    OnInit,
+    DoCheck,
+    AfterContentInit,
+    AfterContentChecked,
+    AfterViewInit,
+    AfterViewChecked,
+    OnDestroy {
   @Input('joke') data: Joke;
   @Output() jokeDeleted = new EventEmitter<Joke>();
 
@@ -20,8 +36,13 @@ export class JokeComponent {
     this.jokeDeleted.emit(this.data);
   }
 
-  ngOnChanges() {
+  ngOnChanges(changes: SimpleChanges) {
     console.log(`ngOnChanges - data is ${this.data}`);
+    for (let key in changes) {
+      console.log(`${key} changed.
+Current: ${changes[key].currentValue}.
+Previous: ${changes[key].previousValue}`);
+    }
   }
 
   ngOnInit() {
