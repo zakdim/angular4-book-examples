@@ -29,7 +29,7 @@ export class JokeComponent implements OnChanges,
   @Output() jokeDeleted = new EventEmitter<Joke>();
 
   constructor() {
-    console.log(`new - data is ${this.data}`);
+    // console.log(`new - data is ${this.data}`);
   }
 
   deleteItem() {
@@ -37,39 +37,39 @@ export class JokeComponent implements OnChanges,
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(`ngOnChanges - data is ${this.data}`);
-    for (let key in changes) {
-      console.log(`${key} changed.
-Current: ${changes[key].currentValue}.
-Previous: ${changes[key].previousValue}`);
-    }
+//     console.log(`ngOnChanges - data is ${this.data}`);
+//     for (let key in changes) {
+//       console.log(`${key} changed.
+// Current: ${changes[key].currentValue}.
+// Previous: ${changes[key].previousValue}`);
+//     }
   }
 
   ngOnInit() {
-    console.log(`ngOnInit - data is ${this.data}`);
+    // console.log(`ngOnInit - data is ${this.data}`);
   }
 
   ngDoCheck() {
-    console.log("ngDoCheck");
+    // console.log("ngDoCheck");
   }
 
   ngAfterContentInit() {
-    console.log("ngAfterContentInit");
+    // console.log("ngAfterContentInit");
   }
 
   ngAfterContentChecked() {
-    console.log("ngAfterContentChecked");
+    // console.log("ngAfterContentChecked");
   }
 
   ngAfterViewInit() {
-    console.log("ngAfterViewInit");
+    // console.log("ngAfterViewInit");
   }
 
   ngAfterViewChecked() {
-    console.log("ngAfterViewChecked");
+    // console.log("ngAfterViewChecked");
   }
 
   ngOnDestroy() {
-    console.log("ngOnDestroy");
+    // console.log("ngOnDestroy");
   }
 }

@@ -1,42 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { Joke } from '../joke';
+import { JokeComponent } from '../joke/joke.component';
 
 @Component({
   selector: 'joke-list',
   templateUrl: './joke-list.component.html',
   styleUrls: ['./joke-list.component.css']
 })
-export class JokeListComponent implements OnInit {
-  jokes: Joke[] = [];
+export class JokeListComponent implements OnInit, AfterViewInit {
+  jokes: Joke[] = [
+    new Joke("What did the cheese say when it looked in the mirror?", "Hello-me (Halloumi)"),
+    new Joke("What kind of cheese do you use to disguise a small horse?", "Mask-a-pony (Mascarpone)")
+  ];
+  @ViewChild(JokeComponent) jokeViewChild: JokeComponent;
 
   constructor() {
-    // this.jokes = [
-    //   new Joke("What did the cheese say when it looked in the mirror?", "Hello-me (Halloumi)"),
-    //   new Joke("What kind of cheese do you use to disguise a small horse?", "Mask-a-pony (Mascarpone)"),
-    //   new Joke("A kid threw a lump of cheddar at me", "I thought ‘That’s not very mature’"),
-    // ];
-  }
-
-  // addJoke(joke) {
-  //   this.jokes.unshift(joke);
-  // }
-
-  addJoke() {
-    this.jokes.unshift(new Joke("What did the cheese say when it looked in the mirror",
-      "Hello-me (Helloumi)"));
-  }
-
-  // deleteJoke(joke) {
-  //   let indexToDelete = this.jokes.indexOf(joke);
-  //   if (indexToDelete !== -1) {
-  //     this.jokes.splice(indexToDelete,1);
-  //   }
-  // }
-
-  deleteJoke() {
-    this.jokes = [];
+    console.log(`new - jokeViewChild is ${this.jokeViewChild}`);
   }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit() {
+    console.log(`ngAfterViewInit - jokeViewChild is ${this.jokeViewChild}`);
   }
 }

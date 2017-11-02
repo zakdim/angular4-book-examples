@@ -1,20 +1,11 @@
 <div class="container">
+  <h4 #header class="mt-1">View Jokes</h4>
   <div class="card-deck">
-    <joke *ngFor="let j of jokes" [joke]="j" (jokeDeleted)="deleteJoke($event)">
+    <joke *ngFor="let j of jokes" [joke]="j">
       <span class="setup">{{ j.setup }} ?</span>
       <span class="punchline">{{ j.punchline }}</span>
     </joke>
-
-    <div class="mt-2 ml-3">
-      <button type="button"
-        class="btn btn-success"
-        (click)="addJoke()">Add Joke
-      </button>
-      <button type="button"
-        class="btn btn-danger"
-        (click)="deleteJoke()">Clear Jokes
-      </button>
-    </div>
-
   </div>
+  <h4>Content Jokes</h4>
+  <ng-content></ng-content>
 </div>
