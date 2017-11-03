@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./carousel-item.component.css']
 })
 export class CarouselItemComponent implements OnInit {
-
   // TODO: Show the content in this carousel
+  isActive: boolean = false;
 
   constructor() { }
 
