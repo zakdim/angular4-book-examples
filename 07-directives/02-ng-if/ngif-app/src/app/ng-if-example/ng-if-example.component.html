@@ -1,0 +1,22 @@
+<h4>NgIf</h4>
+<ul *ngFor="let person of people">
+  <li *ngIf="person.age < 30">
+    {{ person.name }} ({{ person.age }})
+  </li>
+</ul>
+<h4>NgIf (highlight country)</h4>
+<ul *ngFor="let p of people">
+  <li *ngIf="p.country === 'UK'"
+      class="text-success">{{ p.name }} ({{ p.age }})
+  </li>
+  <li *ngIf="p.country === 'USA'"
+      class="text-primary">{{ p.name }} ({{ p.age }})
+  </li>
+  <li *ngIf="p.country === 'HK'"
+      class="text-danger">{{ p.name }} ({{ p.age }})
+  </li>
+  <li *ngIf="p.country !== 'HK' && p.country !== 'UK'
+        && p.country !== 'USA'"
+      class="text-warning">{{ p.name }} ({{ p.age }})
+  </li>
+</ul>
