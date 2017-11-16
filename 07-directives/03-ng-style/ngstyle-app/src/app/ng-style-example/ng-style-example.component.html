@@ -4,3 +4,36 @@
     {{ person.name }} ({{ person.country }})
   </li>
 </ul>
+
+<h4>NgStyle - Alternative Syntax</h4>
+<ul *ngFor="let person of people">
+  <li [style.color]="getColor(person.country)">
+    {{ person.name }} ({{ person.country }})
+  </li>
+</ul>
+
+<h4>NgStyle - Points and pixels</h4>
+<ul *ngFor="let person of people">
+  <li [ngStyle]="{'font-size.px':24}"
+      [style.color]="getColor(person.country)">
+    {{ person.name }} ({{ person.country }})
+  </li>
+</ul>
+
+<h4>NgClass</h4>
+<ul *ngFor="let person of people">
+  <li [ngClass]="{
+    'text-success':person.country === 'UK',
+    'text-primary':person.country === 'USA',
+    'text-danger':person.country === 'HK'
+  }">{{ person.name }} ({{ person.country }})
+  </li>
+</ul>
+
+<h4>NgClass - Alternative Syntax</h4>
+<ul *ngFor="let person of people">
+  <li [class.text-success]="person.country === 'UK'"
+      [class.text-primary]="person.country === 'USA'"
+      [class.text-danger]="person.country === 'HK'">{{ person.name }} ({{ person.country }})
+  </li>
+</ul>

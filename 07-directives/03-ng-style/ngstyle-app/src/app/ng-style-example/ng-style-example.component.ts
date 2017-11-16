@@ -7,9 +7,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgStyleExampleComponent implements OnInit {
 
+  people: any[] = [
+    {
+      "name": "Douglas Pace",
+      "country": 'UK'
+    },
+    {
+      "name": "Mcleod Mueller",
+      "country": 'USA'
+    },
+    {
+      "name": "Day Meyers",
+      "country": 'HK'
+    },
+    {
+      "name": "Aquirre Ellis",
+      "country": 'UK'
+    },
+    {
+      "name": "Cook Tyson",
+      "country": 'USA'
+    }
+  ];
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  getColor(country) {
+    switch (country) {
+      case 'UK':
+        return 'green';
+      case 'USA':
+        return 'blue';
+      case 'HK':
+        return 'red';
+    }
+  }
 }
