@@ -1,0 +1,14 @@
+<div class="card mt-4" style="width: 40rem;">
+  <div class="card-body">
+  <h4 class="card-title">
+    {{ data.setup }}
+  </h4>
+  <template [ngIf]="!data.hide">
+    <p class="card-text">
+      {{ data.punchline }}
+    </p>
+  </template>
+  <button class="btn btn-primary"
+    (click)="data.toggle()">Tell Me</button>
+  </div>
+</div>
