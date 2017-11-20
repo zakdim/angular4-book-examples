@@ -1,14 +1,19 @@
-<div class="col-md-4"
+<div class="col-md-6 mt-2"
     *ngFor="let article of articles">
-  <div class="card card-outline-primary">
-    <div class="card-block">
+  <div class="card" [ngClass]="{
+    'border-primary':article.kind === 'text',
+    'border-danger':article.kind === 'image'
+  }">
+    <div class="card-body">
       <h4 class="card-title">{{ article.title }}</h4>
-      <p class="card-text">{{ article.content }}</p>
+      <p class="card-text"
+        *ngIf="article.kind === 'text'">{{ article.content }}</p>
       <p class="card-text">
-        <small class="text-muted">Last update {{ article.date | date:'shortDate'}}</small>
+        <small class="text-muted">Last updated {{ article.date | date:'MM/dd/yyyy'}}</small>
       </p>
     </div>
     <img class="card-img-bottom img-fluid"
+      *ngIf="article.kind === 'image'"
       src="https://unsplash.it/400?image=11">
   </div>
 </div>
