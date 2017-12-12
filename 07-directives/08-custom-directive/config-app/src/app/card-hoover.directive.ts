@@ -10,7 +10,7 @@ import {
   selector: '[ccCardHoover]'
 })
 export class CardHooverDirective {
-  @Input() config = {
+  @Input('ccCardHoover') config = {
     querySelector: '.card-text'
   }
 
