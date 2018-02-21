@@ -1,0 +1,21 @@
+<!-- Currency -->
+<div class="card" style="margin-top: 1rem; width: 40rem;">
+  <div class="card-body">
+    <h4 class="card-title">Async Pipe</h4>
+    <div class="card-text">
+
+      <p ngNonBindable>{{ promiseData }}</p>
+      <p>{{ promiseData }}</p>
+
+      <p ngNonBindable>{{ promise | async }}</p>
+      <p>{{ promise | async }}</p>
+
+      <p ngNonBindable>{{ observableData }}</p>
+      <p>{{ observableData }}</p>
+
+      <p ngNonBindable>{{ observable | async }}</p>
+      <p>{{ observable | async }}</p>
+
+    </div>
+  </div>
+</div>
