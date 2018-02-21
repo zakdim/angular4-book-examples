@@ -63,3 +63,67 @@
     </div>
   </div>
 </div>
+
+<!-- Lower/Upper Case -->
+<div class="card" style="margin-top: 1rem; width: 40rem;">
+  <div class="card-body">
+    <h4 class="card-title">Lower/Upper Case Pipe</h4>
+    <div class="card-text">
+
+      <p ngNonBindable>{{ 'ASIM' | lowercase }}</p>
+      <p>{{ 'ASIM' | lowercase }}</p>
+
+      <p ngNonBindable>{{ 'asim' | uppercase }}</p>
+      <p>{{ 'asim' | uppercase }}</p>
+
+    </div>
+  </div>
+</div>
+
+<!-- Percent -->
+<div class="card" style="margin-top: 1rem; width: 40rem;">
+  <div class="card-body">
+    <h4 class="card-title">Percent Pipe</h4>
+    <div class="card-text">
+
+      <p ngNonBindable>{{ 0.123456 | percent }}</p>
+      <p>{{ 0.123456 | percent }}</p>
+
+      <p ngNonBindable>{{ 0.123456 | percent:'2.1-2' }}</p>
+      <p>{{ 0.123456 | percent: '2.1-2' }}</p>
+
+      <p ngNonBindable>{{ 0.123456 | percent:'10.4-4' }}</p>
+      <p>{{ 0.123456 | percent:'10.4-4' }}</p>
+
+    </div>
+  </div>
+</div>
+
+<!-- Slice -->
+<div class="card" style="margin-top: 1rem; width: 40rem;">
+  <div class="card-body">
+    <h4 class="card-title">Slice Pipe</h4>
+    <div class="card-text">
+
+      <p ngNonBindable>{{ [1,2,3,4,5,6] | slice:1:3 }}</p>
+      <p>{{ [1,2,3,4,5,6] | slice:1:3 }}</p>
+
+      <p ngNonBindable>{{ [1,2,3,4,5,6] | slice:2 }}</p>
+      <p>{{ [1,2,3,4,5,6] | slice:2 }}</p>
+
+      <pre ngNonBindable>
+&lt;ul&gt;
+  &lt;li *ngFor=&quot;let v of [1,2,3,4,5,6] | slice:2:-1&quot;&gt;
+    {{v}}
+  &lt;/li&gt;
+&lt;/ul&gt;
+      </pre>
+      <ul>
+        <li *ngFor="let v of [1,2,3,4,5,6] | slice:2:-1">
+          {{v}}
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
