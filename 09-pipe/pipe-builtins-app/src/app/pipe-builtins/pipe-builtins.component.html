@@ -1,0 +1,65 @@
+<!-- Currency -->
+<div class="card" style="margin-top: 1rem; width: 40rem;">
+  <div class="card-body">
+    <h4 class="card-title">Currency</h4>
+    <div class="card-text">
+
+      <p ngNonBindable>{{ 1234.56 | currency:'GBP' }}</p>
+      <p>{{ 1234.56 | currency:"GBP":false }}</p>
+
+      <p ngNonBindable>{{ 1234.56 | currency:"GBP":'true' }}</p>
+      <p>{{ 1234.56 | currency:"GBP":true }}</p>
+
+    </div>
+  </div>
+</div>
+<!-- Date -->
+<div class="card" style="margin-top: 1rem; width: 40rem;">
+  <div class="card-body">
+    <h4 class="card-title">Date</h4>
+    <div class="card-text">
+
+      <p ngNonBindable>{{ dateVal | date: 'shortTime' }}</p>
+      <p>{{ dateVal | date: 'shortTime' }}</p>
+
+      <p ngNonBindable>{{ dateVal | date:'fullDate' }}</p>
+      <p>{{ dateVal | date:'fullDate' }}</p>
+
+      <p ngNonBindable>{{ dateVal | date:'d/M/y' }}</p>
+      <p>{{ dateVal | date:'d/M/y' }}</p>
+
+    </div>
+  </div>
+</div>
+
+<!-- Number -->
+<div class="card" style="margin-top: 1rem; width: 40rem;">
+  <div class="card-body">
+    <h4 class="card-title">Decimal Pipe</h4>
+    <div class="card-text">
+
+      <p ngNonBindable>{{ 3.14159265 | number: '3.1-2' }}</p>
+      <p>{{ 3.14159265 | number: '3.1-2' }}</p>
+
+      <p ngNonBindable>{{ 3.14159265 | number: '1.4-4' }}</p>
+      <p>{{ 3.14159265 | number: '1.4-4' }}</p>
+
+    </div>
+  </div>
+</div>
+
+<!-- JSON -->
+<div class="card" style="margin-top: 1rem; width: 40rem;">
+  <div class="card-body">
+    <h4 class="card-title">Json Pipe</h4>
+    <div class="card-text">
+
+      <p ngNonBindable>{{ jsonVal }}</p>
+      <p>{{ jsonVal }}</p>
+
+      <p ngNonBindable>{{ jsonVal | json }}</p>
+      <p>{{ jsonVal | json }}</p>
+
+    </div>
+  </div>
+</div>
