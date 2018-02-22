@@ -1,11 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { 
+  Component, 
+  Pipe,
+  OnInit } from '@angular/core';
 import {
-  ReactiveFormsModule,
-  FormsModule,
   FormGroup,
-  FormControl,
-  Validators,
-  FormBuilder
+  FormControl
 } from '@angular/forms';
 
 @Component({
